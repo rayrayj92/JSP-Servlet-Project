@@ -1,4 +1,4 @@
-package com.boarder.controller.login;
+package com.board.controller.login;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
