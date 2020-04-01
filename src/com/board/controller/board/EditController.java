@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.UUID;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +17,11 @@ import javax.servlet.http.Part;
 import com.board.model.dao.NoticeBoard;
 import com.board.service.NoticeService;
 
-/**
- * Servlet implementation class EditController
- */
+@MultipartConfig(
+		fileSizeThreshold = 1024 * 1024, // 1MB가 넘어가면 메모리가 아닌 디스크를 쓰자
+		maxFileSize = 1024 * 1024 * 5, //하나의 파일 사이즈
+		maxRequestSize = 1024 * 1024 * 5 * 5 //전체 요청의 사이즈 25MB
+)
 @WebServlet("/notice/edit")
 public class EditController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -51,6 +54,7 @@ public class EditController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int notice_id = Integer.parseInt(request.getParameter("id"));
+		System.out.println("sad "+notice_id);
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		Part filePart = request.getPart("file");

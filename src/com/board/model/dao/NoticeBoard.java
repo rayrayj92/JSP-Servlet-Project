@@ -33,7 +33,7 @@ public class NoticeBoard implements java.io.Serializable {
 	static final String GET_NOTICE_ALL_QUERY = "select n from NoticeBoard n order by n.id desc";
 	static final String GET_NOTICE_QUERY = "from NoticeBoard n where n.id = :id";
 	static final String GET_NOTICE_UPDATE_QUERY = "update NoticeBoard n "
-			+ "set title = :title, content = :content, file = :file where n.id = :id";
+			+ "set title = :title, content = :content, file = :file, fileName = :fileName where n.id = :id";
 	static final String GET_NOTICE_UPDATE_VIEW_QUERY = "update NoticeBoard n set view = view + 1 where n.id = :id";
 	
 	private Integer id;

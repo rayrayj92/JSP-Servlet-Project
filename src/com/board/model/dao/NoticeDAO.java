@@ -42,6 +42,7 @@ public class NoticeDAO {
         query.setParameter("title", nb.getTitle());
         query.setParameter("content", nb.getContent());
         query.setParameter("file", nb.getFile());
+        query.setParameter("fileName", nb.getFileName());
         query.setParameter("id", nb.getId());
         
 		query.executeUpdate();

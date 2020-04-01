@@ -24,7 +24,7 @@
 		<div class="row">
 			<div class="col-3"></div>
 			<div class="col-6">
-				<form action="edit" method="post" onsubmit="return validateFormInput()">
+				<form action="edit" method="post" enctype="multipart/form-data" onsubmit="return validateFormInput()">
 						<input type="hidden" name="id" value="${notice.id}" />
 					<div class="form-group">
 						<label for="title" class="control-lable">Title - 제목</label>
