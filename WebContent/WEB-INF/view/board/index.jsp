@@ -45,7 +45,12 @@
 					  	<tr>
 					  	  <th><input type="checkbox" name="del-id" value="${list.id}"></th>
 					      <th scope="row">${status.index + 1}</th>
-					      <td><a href="list/detail?id=${list.id}">${list.title}</a></td>
+					      <td>
+					      	<a href="list/detail?id=${list.id}">${list.title} </a>
+					      	<c:if test="${list.file != ''}">
+								<img src="../images/save-file.png" width="15px" />
+							</c:if>
+					      </td>
 					      <td>${list.author}</td>
 					      <td>
 					      	<fmt:formatDate pattern="yyyy년 MM월 dd일" value="${list.date}"/>

@@ -31,7 +31,7 @@
 				<hr />
 				<span style="font-size:1.2rem; font-weight: 700;">Files</span><br />
 				<c:if test="${notice.file != ''}">
-					<span>${notice.file}</span>
+					<a href="FileDown?fileName=${notice.file}" download>${notice.fileName}</a>
 				</c:if>
 				<c:if test="${notice.file == ''}">
 					<span style="color:red;">No files</span>

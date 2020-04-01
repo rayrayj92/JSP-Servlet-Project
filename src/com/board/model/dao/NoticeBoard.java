@@ -43,6 +43,7 @@ public class NoticeBoard implements java.io.Serializable {
 	private Date date;
 	private String file;
 	private Integer view;
+	private String fileName;
 
 	public NoticeBoard() {
 	}
@@ -54,11 +55,12 @@ public class NoticeBoard implements java.io.Serializable {
 	}
 	
 	//Update or Edit purpose only
-	public NoticeBoard(Integer id, String title, String content, String file) {
+	public NoticeBoard(Integer id, String title, String content, String file, String fileName) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.file = file;
+		this.fileName = fileName;
 	}
 
 	public NoticeBoard(String title, String author, String content, Date date, Integer view) {
@@ -69,13 +71,14 @@ public class NoticeBoard implements java.io.Serializable {
 		this.view = view;
 	}
 
-	public NoticeBoard(String title, String author, String content, Date date, String file, Integer view) {
+	public NoticeBoard(String title, String author, String content, Date date, String file, Integer view, String fileName) {
 		this.title = title;
 		this.author = author;
 		this.content = content;
 		this.date = date;
 		this.file = file;
 		this.view = view;
+		this.fileName = fileName;
 	}
 
 	@Id
@@ -127,7 +130,7 @@ public class NoticeBoard implements java.io.Serializable {
 		this.date = date;
 	}
 
-	@Column(name = "FILE")
+	@Column(name = "FILE", length = 250)
 	public String getFile() {
 		return this.file;
 	}
@@ -143,6 +146,15 @@ public class NoticeBoard implements java.io.Serializable {
 
 	public void setView(Integer view) {
 		this.view = view;
+	}
+	
+	@Column(name = "FILE_NAME", length = 100)
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 
 }

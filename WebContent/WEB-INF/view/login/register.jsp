@@ -63,7 +63,7 @@
 		var passwordConfirm = document.getElementById("passwordConfirm");
 		
 		if(password.value != passwordConfirm.value){
-			alert("Password are not identical.");
+			alert("비밀번호가 일치하지 않습니다. Password & Confirm Password are not identical.");
 			passwordConfirm.focus();
 			return false;
 		}

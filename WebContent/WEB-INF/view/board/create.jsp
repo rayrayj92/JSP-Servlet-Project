@@ -24,7 +24,7 @@
 		<div class="row">
 			<div class="col-3"></div>
 			<div class="col-6">
-				<form action="create" method="post" onsubmit="return validateFormInput()">
+				<form action="create" method="post" enctype="multipart/form-data" onsubmit="return validateFormInput()">
 					<div class="form-group">
 						<label for="title" class="control-lable">Title - 제목</label>
 						<input type="text" id="title" name="title" class="form-control" placeholder="제목을 입력하세요" />
